@@ -9,7 +9,7 @@
 # 2. ✅ Set Up Imports
 from flask import Flask, jsonify, make_response, request
 from flask_migrate import Migrate
-from models import db, Production
+from models import db, Pet
 
 # 3. ✅ Initialize the App
 app = Flask(__name__)
@@ -45,6 +45,17 @@ def hello():
 @app.route('/books/<int:id>')
 def book_by_id(id):
     return make_response(jsonify({"id": id}), 200)
+
+@app.route('/pets/<int:id>')
+def pets_by_id(id):
+    pet = Pet.query.filter(Pet.id == id).one()
+
+    return make_response(jsonify({
+        "id": pet.id,
+        "name": pet.name
+    }), 200)
+
+
 
 # 7. ✅ Run the server with `flask run` and verify your route in the browser at `http://localhost:5000/`
 
