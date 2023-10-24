@@ -62,10 +62,9 @@ def pets_by_id(id):
 # 8. ✅ Create a dynamic route
 
 
-
 # 9.✅ Update the route to find a `production` by its `title` and send it to our browser
-    
-   
+
+
 
 # Note: If you'd like to run the application as a script instead of using `flask run`, uncomment the line below 
 # and run `python app.py`
